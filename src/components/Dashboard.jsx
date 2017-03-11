@@ -36,15 +36,15 @@ class App extends Component {
         },
         PerformanceWidget: {
           type: DoughnutChart,
-          title: 'Polution right now',
+          title: 'Pollution right now',
         },
         UltraSound1: {
           type: LineChart,
-          title: 'Ultasound 1 graph. Distance to the ground on the y axis and a sample of a second on the x axis',
+          title: 'Ultrasound 1 graph. Distance to the ground on the y axis and a sample of a second on the x axis',
         },
         UltraSound2: {
           type: U2LineChart,
-          title: 'Ultasound 2 graph. Distance to the ground on the y axis and a sample of a second on the x axis',
+          title: 'Ultrasound 2 graph. Distance to the ground on the y axis and a sample of a second on the x axis',
         },
         CarPositions: {
           type: AriotGoogleMaps,
