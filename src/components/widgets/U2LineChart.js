@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Line } from 'react-chartjs';
+import { Line } from 'react-chartjs-2';
 
 class LineChart extends Component {
   constructor(props) {
@@ -59,7 +59,7 @@ class LineChart extends Component {
   render() {
     return (
       <div >
-         <Line data={this.state.data} options={this.state.data.datasets[0].options} height="210" width="800"/>
+         <Line data={this.state.data} options={this.state.data.datasets[0].options} height={210} width={800}/>
        </div>
     );
   }

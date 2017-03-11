@@ -1,5 +1,5 @@
 import React from 'react';
-import { Doughnut } from 'react-chartjs';
+import { Doughnut } from 'react-chartjs-2';
 
 class DoughnutChart extends React.Component {
   constructor() {
@@ -49,7 +49,7 @@ class DoughnutChart extends React.Component {
   render() {
     return (
       <div className="polution">
-         <Doughnut data={this.state.data} options={{ animationEasing: 'easeInSine', showTooltips: true }} height="200" width="350"/>
+         <Doughnut data={this.state.data} options={{ animationEasing: 'easeInSine', showTooltips: true }} height={200} width={350}/>
           <span>{`Current polution level (red) is ${this.state.data[0].value} of 1023`}</span>
 
        </div>
