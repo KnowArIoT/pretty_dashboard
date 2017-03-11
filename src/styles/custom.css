@@ -3,6 +3,12 @@
 .google-map {
   height: 505px;
 }
+.data-table {
+  height: 209px;
+}
+.data-label {
+  height: 210px;
+}
 body {
   color: #73879C;
   background: white;

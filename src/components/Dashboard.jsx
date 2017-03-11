@@ -12,7 +12,7 @@ import CustomFrame from './CustomFrame';
 import BarChart from './widgets/BarChart';
 import LineChart from './widgets/LineChart';
 import U2LineChart from './widgets/U2LineChart';
-
+import TextWidget from './widgets/TextWidget';
 import DoughnutChart from './widgets/DoughnutChart';
 import AriotGoogleMaps from './widgets/AriotGoogleMaps';
 // We are using bootstrap as the UI library
@@ -37,6 +37,10 @@ class App extends Component {
         PerformanceWidget: {
           type: DoughnutChart,
           title: 'Pollution right now',
+        },
+        LogWidget: {
+          type: TextWidget,
+          title: 'Log for each sensor',
         },
         UltraSound1: {
           type: LineChart,
@@ -77,7 +81,7 @@ class App extends Component {
             },
             {
               className: 'col-md-6 col-sm-6 col-xs-6',
-              widgets: [{key: 'PerformanceWidget'}],
+              widgets: [{key: 'LogWidget'}],
             },
           ],
         }],

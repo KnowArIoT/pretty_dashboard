@@ -168,7 +168,6 @@ class AriotGoogleMaps extends React.Component {
   handleMarkerRightClick() {
   }
   handleMarkerClick(img) {
-    console.log(img);
     this.setState({img: { obj: img, show: !this.state.img.show}});
   }
 
