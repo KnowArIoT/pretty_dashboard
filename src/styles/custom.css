@@ -1,6 +1,7 @@
-
+#root {
+}
 .google-map {
-  height: 205px;
+  height: 505px;
 }
 body {
   color: #73879C;
@@ -512,7 +513,7 @@ h2 {
   padding: 10px 17px;
   display: inline-block;
   background: #fff;
-  border: 1px solid #E6E9ED;
+  border: 1px solid #009682;
   -webkit-column-break-inside: avoid;
   -moz-column-break-inside: avoid;
   column-break-inside: avoid;
@@ -3458,7 +3459,7 @@ ul.project_files li a i {
   margin: 0 auto;
   margin-top: 3%;
   padding: 1em 2em 3em 2em;
-  max-width: 400px;
+  max-width: 800px;
   border-radius: 5px;
 }
 
@@ -3466,8 +3467,11 @@ ul.project_files li a i {
   width: 80%;
   text-align: center;
 }
+.lightbox_content img {
+  max-width: 100%;
+}
 .green-border-bottom {
-  
+
 }
 
 .big-lightbox_wrapper .lightbox .lightbox_content {
@@ -3509,4 +3513,12 @@ button, .button {
   width: 44px;
   margin-top: -5px;
   margin-right: -20px;
+}
+.polution span {
+  margin-top: 66px;
+  display: inline-block;
+  width: 29%;
+}
+.polution canvas {
+  float: left;
 }

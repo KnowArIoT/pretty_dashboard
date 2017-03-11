@@ -10,20 +10,19 @@ class LineChart extends Component {
         datasets: [
           {
             label: 'line',
-            fillColor: '#009682',
-            strokeColor: '#009682',
-            pointColor: '#009682',
+            fillColor: '#8E7FAE',
+            strokeColor: '#8E7FAE',
+            pointColor: '#8E7FAE',
             pointStrokeColor: '#fff',
             pointHighlightFill: '#fff',
             pointHighlightStroke: 'rgba(151,187,205,1)',
             data: [],
-            scales: {
-              yAxes: [{
-                scaleLabel: {
-                  display: true,
-                  labelString: 'ms in s',
-                },
-              }],
+            options: {
+              responsive: true,
+              title: {
+                display: true,
+                text: 'Custom Chart Title',
+              },
             },
           },
         ],
@@ -36,7 +35,7 @@ class LineChart extends Component {
     const refreshIntervalId = setInterval(() => {
 //      this.state.data.datasets[1].data.shift();
   //    this.state.data.datasets[1].data.push(getRandomInt(0, 90));
-      fetch('https://ariot.thuc.cloud/data/u1?count=10')
+      fetch('https://ariot.thuc.cloud/data/u2?count=10')
         .then(response => {
           response.json().then(array => {
             const sortedOnX = array.sort((a, b) => a.miliseconds - b.miliseconds);
@@ -60,7 +59,7 @@ class LineChart extends Component {
   render() {
     return (
       <div >
-         <Line data={this.state.data} options={{responsive: true }} height="210" width="800"/>
+         <Line data={this.state.data} options={this.state.data.datasets[0].options} height="210" width="800"/>
        </div>
     );
   }

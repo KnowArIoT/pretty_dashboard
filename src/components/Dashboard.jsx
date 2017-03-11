@@ -11,6 +11,8 @@ import CustomFrame from './CustomFrame';
 // Widgets of the dashboard.
 import BarChart from './widgets/BarChart';
 import LineChart from './widgets/LineChart';
+import U2LineChart from './widgets/U2LineChart';
+
 import DoughnutChart from './widgets/DoughnutChart';
 import AriotGoogleMaps from './widgets/AriotGoogleMaps';
 // We are using bootstrap as the UI library
@@ -36,13 +38,17 @@ class App extends Component {
           type: DoughnutChart,
           title: 'Polution right now',
         },
-        UltraSound: {
+        UltraSound1: {
           type: LineChart,
-          title: 'Ultasound graph',
+          title: 'Ultasound 1 graph. Distance to the ground on the y axis and a sample of a second on the x axis',
+        },
+        UltraSound2: {
+          type: U2LineChart,
+          title: 'Ultasound 2 graph. Distance to the ground on the y axis and a sample of a second on the x axis',
         },
         CarPositions: {
           type: AriotGoogleMaps,
-          title: 'Plots over recent pit holes found',
+          title: 'Plots over recent pit holes found near you.',
         },
       },
       // Layout of the dashboard
@@ -50,17 +56,27 @@ class App extends Component {
         rows: [{
           columns: [{
             className: 'col-md-12 col-sm-12 col-xs-12',
-            widgets: [{key: 'UltraSound'}],
+            widgets: [{key: 'UltraSound1'}],
+          }],
+        },
+        {
+          columns: [{
+            className: 'col-md-12 col-sm-12 col-xs-12',
+            widgets: [{key: 'UltraSound2'}],
           }],
         },
         {
           columns: [
             {
-              className: 'col-md-4 col-sm-4 col-xs-4',
+              className: 'col-md-6 col-sm-6 col-xs-6',
               widgets: [{key: 'CarPositions'}],
             },
             {
-              className: 'col-md-4 col-sm-4 col-xs-4',
+              className: 'col-md-6 col-sm-6 col-xs-6',
+              widgets: [{key: 'PerformanceWidget'}],
+            },
+            {
+              className: 'col-md-6 col-sm-6 col-xs-6',
               widgets: [{key: 'PerformanceWidget'}],
             },
           ],

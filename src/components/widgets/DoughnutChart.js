@@ -24,6 +24,17 @@ class DoughnutChart extends React.Component {
 
   componentDidMount() {
     const refreshIntervalId  = setInterval(() => {
+      fetch('https://ariot.thuc.cloud/data/gas?count=10')
+        .then(response => {
+          response.json().then(array => {
+            const allData = array.map(a => a.data);
+            const medianGasLevel = allData.reduce((a, b) => a + b, 0) / allData.length;
+            const oldValues = this.state.data;
+            oldValues[0].value = medianGasLevel;
+            oldValues[1].value = 1023 - medianGasLevel;
+            this.setState({data: oldValues});
+          });
+        });
       this.setState({
         data: this.state.data,
         refreshIntervalId,
@@ -37,8 +48,10 @@ class DoughnutChart extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="polution">
          <Doughnut data={this.state.data} options={{ animationEasing: 'easeInSine', showTooltips: true }} height="200" width="350"/>
+          <span>{`Current polution level (red) is ${this.state.data[0].value} of 1023`}</span>
+
        </div>
     );
   }
